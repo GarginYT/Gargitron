@@ -1,16 +1,4 @@
 const Discord = require('discord.js');
-const logger = require('winston');
-const { prefix, token } = require('./auth.json');
-
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console,
-{
-    colorize: true
-    });
-
-logger.leve = 'debug';
-
 const client = new Discord.Client();
 
 client.once('ready', () => {

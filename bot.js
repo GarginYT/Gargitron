@@ -5,14 +5,13 @@ client.on('message', message => {
     // If the message is in the roles channel
     if (message.channel.id == '575068038387335198') {
         // If the message is !lfg
-        if (message.content == "!lfg")
-        {
+        if (message.content == "!lfg") {
+            message.channel.send('test lfg');
             let role = message.member.guild.roles.get('575102690393063424');
             message.member.addRole(role);
         }
         // If the message is !updates
-        if (message.content == "!updates")
-        {
+        if (message.content == "!updates") {
             let role = message.member.guild.roles.get('575102622776950804');
             message.member.addRole(role);
         }
@@ -20,10 +19,9 @@ client.on('message', message => {
         if (message.content == "!video") {
             let role = message.member.guild.roles.get('575067316753137674');
             message.member.addRole(role);
-        } 
+        }
         // If the message is !remove
-        if (message.content == "!remove")
-        {
+        if (message.content == "!remove") {
             message.member.removeRoles(['575102690393063424', '575102622776950804', '575067316753137674']);
         }
         //message.delete(100);

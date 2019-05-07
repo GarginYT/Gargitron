@@ -1,12 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.once('ready', () => {
-    logger.info('Gargitron activated.');
-});
-
-
-
 client.on('message', message => {
     // If the message is in the roles channel
     if (message.channel.id == '575068038387335198') {

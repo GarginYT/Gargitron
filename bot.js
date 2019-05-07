@@ -6,19 +6,18 @@ client.on('message', message => {
     if (message.channel.id == '575068038387335198') {
         // If the message is !lfg
         if (message.content == "!lfg") {
-            message.channel.send('test lfg');
-            let role = message.member.guild.roles.get('575102690393063424');
-            message.member.addRole(role);
+            let currentRole = message.member.guild.roles.get('575102690393063424');
+            message.member.addRole(currentRole);
         }
         // If the message is !updates
         if (message.content == "!updates") {
-            let role = message.member.guild.roles.get('575102622776950804');
-            message.member.addRole(role);
+            let currentRole = message.member.guild.roles.get('575102622776950804');
+            message.member.addRole(currentRole);
         }
         // If the message is !video
         if (message.content == "!video") {
-            let role = message.member.guild.roles.get('575067316753137674');
-            message.member.addRole(role);
+            let currentRole = message.member.guild.roles.get('575067316753137674');
+            message.member.addRole(currentRole);
         }
         // If the message is !remove
         if (message.content == "!remove") {

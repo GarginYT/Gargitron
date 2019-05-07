@@ -26,7 +26,7 @@ client.on('message', message => {
         {
             message.member.removeRoles(['575102690393063424', '575102622776950804', '575067316753137674']);
         }
-        message.delete(100);
+        //message.delete(100);
     }
 });
 

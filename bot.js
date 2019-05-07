@@ -26,7 +26,7 @@ client.on('message', message => {
         if (message.content == "!video") {
             let role = message.member.guild.roles.get('575067316753137674');
             message.member.addRole(role);
-        } else if 
+        } 
         // If the message is !remove
         if (message.content == "!remove")
         {

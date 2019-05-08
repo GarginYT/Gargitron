@@ -8,6 +8,7 @@ client.on('message', message => {
         if (message.content == "!lfg") {
             let currentRole = message.guild.roles.get('575102690393063424');
             message.member.addRole(currentRole);
+            message.channel.send(currentRole.id);
         }
         // If the message is !updates
         if (message.content == "!updates") {

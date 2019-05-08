@@ -31,7 +31,7 @@ client.on('message', message => {
     }
     if (message.content.startsWith("!purge")) {
         let splitCommand = message.content.split(" ");
-        channel.fetchMessages({ limit: splitCommand[1]}).delete();
+        message.channel.fetchMessages({ limit: splitCommand[1]}).delete();
         
     }
 });

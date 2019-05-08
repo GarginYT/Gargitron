@@ -32,9 +32,9 @@ client.on('message', message => {
     if (message.content.startsWith("!purge")) {
         //message.channel.send("test");
         let splitCommand = message.content.split(" ");
-        message.channel.send(splitCommand[1]);
         //let fetched = message.channel.fetchMessages({limit: splitCommand[1]});
-        message.channel.bulkDelete(5).catch(error => message.channel.send('Error: ${error}'))
+        message.channel.bulkDelete(5).catch(error => message.channel.send('Error: ${error}')).then(message.channel.send("you win"));
+        message.channel.send(splitCommand[1]);
     }
 });
 

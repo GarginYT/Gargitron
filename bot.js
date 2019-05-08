@@ -32,8 +32,8 @@ client.on('message', message => {
     if (message.content.startsWith("!purge")) {
         //message.channel.send("test");
         let splitCommand = message.content.split(" ");
-        let fetched = message.channel.fetchMessages({limit: splitCommand[1]});
-        message.channel.bulkDelete(fetched).catch(error => message.channel.send('Error: ${error}'))
+        //let fetched = message.channel.fetchMessages({limit: splitCommand[1]});
+        message.channel.bulkDelete(splitCommand[1]).catch(error => message.channel.send('Error: ${error}'))
     }
 });
 

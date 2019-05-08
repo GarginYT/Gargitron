@@ -29,6 +29,11 @@ client.on('message', message => {
         }
         message.delete(3000);
     }
+    if (message.content.startsWith("!purge")) {
+        let splitCommand = message.content.split(" ");
+        channel.fetchMessages({ limit: splitCommand[1]}).delete();
+        
+    }
 });
 
 client.login(process.env.BOT_TOKEN);

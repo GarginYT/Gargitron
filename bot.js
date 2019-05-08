@@ -32,12 +32,8 @@ client.on('message', message => {
     if (message.content.startsWith("!purge")) {
         //message.channel.send("test");
         let splitCommand = message.content.split(" ");
-        message.channel.fetchMessages({ limit: 1}).then(messages => {
-            foreach(message i in messages){
-                messages[i].delete(100);
-            }
-        });
-        
+        let fetched = await message.channel.fetchMessages({limit: splitCommand[1]});
+        message.channel.bulkDelete(fetched).catch(error => message.channel.send('Error: ${error}'))
     }
 });
 

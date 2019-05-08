@@ -33,7 +33,9 @@ client.on('message', message => {
         //message.channel.send("test");
         let splitCommand = message.content.split(" ");
         message.channel.fetchMessages({ limit: 1}).then(messages => {
-            messages.delete(100);
+            foreach(message i in messages){
+                messages[i].delete(100);
+            }
         });
         
     }

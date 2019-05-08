@@ -8,23 +8,26 @@ client.on('message', message => {
         if (message.content == "!lfg") {
             let currentRole = message.guild.roles.get('575102690393063424');
             message.member.addRole(currentRole);
-            message.channel.send(currentRole.id);
+            message.channel.send("Success! You have been assigned the LFG role.");
         }
         // If the message is !updates
         if (message.content == "!updates") {
             let currentRole = message.guild.roles.get('575102622776950804');
             message.member.addRole(currentRole);
+            message.channel.send("Success! You have been assigned the Updates role.");
         }
         // If the message is !video
         if (message.content == "!video") {
             let currentRole = message.guild.roles.get('575067316753137674');
             message.member.addRole(currentRole);
+            message.channel.send("Success! You have been assigned the Video Announcements role.");
         }
         // If the message is !remove
         if (message.content == "!remove") {
             message.member.removeRoles(['575102690393063424', '575102622776950804', '575067316753137674']);
+            message.channel.send("Your roles have been successfully removed!");
         }
-        message.delete(100);
+        message.delete(3000);
     }
 });
 

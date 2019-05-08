@@ -29,11 +29,19 @@ client.on('message', message => {
         }
         message.delete(3000);
     }
-    if (message.content.startsWith("!purge")) {
-        //message.channel.send("test");
-        let splitCommand = message.content.split(" ");
-        //let fetched = message.channel.fetchMessages({limit: splitCommand[1]});
-        message.channel.bulkDelete(5).catch(error => message.channel.send('Error: ${error}'));
+    if (message.member.roles.has('575056660997865475')) {
+        // Admin and Mod commands go here
+        if (message.content.startsWith("!purge")) {
+            //message.channel.send("test");
+            let splitCommand = message.content.split(" ");
+            //let fetched = message.channel.fetchMessages({limit: splitCommand[1]});
+            message.channel.bulkDelete(splitCommand[1]).catch(error => message.channel.send('Error: ${error}'));
+        }
+
+        
+        if (message.member.roles.has('575053814047178782')) {
+            // Only Admin commands go here
+        }
     }
 });
 

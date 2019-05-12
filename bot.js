@@ -103,7 +103,7 @@ function checkProfanity(code) {
 
     for (var i = 0; i < swears.length; i++) {
         let swear = swears[i];
-        if (code.content.includes(swear)) {
+        if (code.includes(swear)) {
             return true;
         }
     }

@@ -48,7 +48,7 @@ client.on('message', message => {
     }
 
     // Clean chat filter
-    if (message.channel.id == '575457906120720394') {
+    if (message.channel.id == '577242141126819860') {
         console.log ("recieved");
         let currentMessage = profanityCipher(message.content);
         if (checkProfanity(currentMessage) == true) {
@@ -100,7 +100,7 @@ function profanityCipher(originalMessage) {
 
 function checkProfanity(code) {
 
-    let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "49lx", "3n3x", "85l"];
+    let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "49lx", "3n3x"];
 
     for (var i = 0; i < swears.length; i++) {
         let swear = swears[i];

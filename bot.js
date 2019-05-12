@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const SWEAR_CIPHER = "123456789zxcvbnmasdfghjklq";
-const SWEAR_CHECK = "abcdefghijklmnopqrstuvwxyz";
+//const SWEAR_CIPHER = "123456789zxcvbnmasdfghjklq";
+//const SWEAR_CHECK = "abcdefghijklmnopqrstuvwxyz";
 
 client.on('guildMemberAdd', member => {
     // Adding the Members role to new members
@@ -52,6 +52,8 @@ client.on('message', message => {
         let currentMessage = profanityCipher(message);
         if (checkProfanity(currentMessage) == true) {
             message.delete();
+        } else {
+            message.channel.send ("failed");
         }
     }
 
@@ -73,15 +75,17 @@ client.on('message', message => {
 // For if anyone ever looks through this source code. No need to see a bunch of swearing lol.
 function profanityCipher(originalMessage) {
 
-    let splitCode = SWEAR_CIPHER.split('');
-    let splitCodeAlt = SWEAR_CHECK.split('');
+    let splitCode = "123456789zxcvbnmasdfghjklq";
+    splitCode = splitCode.split('');
+    let splitCodeAlt = "abcdefghijklmnopqrstuvwxyz";
+    splitCodeAlt = splitCodeAlt.split('');
     let newMessage = "";
 
     for (var i = 0; i < originalMessage.length; i++) {
         let currentCharacter = originalMessage.charAt(i);
 
         if (splitCodeAlt.indexOf(currentCharacter).toLowerCase !== -1) {
-            let currentCharacter = SWEAR_CIPHER[splitCodeAlt.indexOf(currentCharacter).toLowerCase];
+            let currentCharacter = splitCode[splitCodeAlt.indexOf(currentCharacter).toLowerCase];
         }
 
         newMessage = newMessage + currentCharacter;

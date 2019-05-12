@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const SWEAR_CIPHER = "123456789zxcvbnmasdfghjklq";
+const SWEAR_CHECK = "abcdefghijklmnopqrstuvwxyz";
+
 client.on('guildMemberAdd', member => {
     // Adding the Members role to new members
     let currentRole = member.guild.roles.find('name', 'Members');
@@ -43,6 +46,15 @@ client.on('message', message => {
         // Deleting the message in 3 seconds
         message.delete(3000);
     }
+
+    // Clean chat filter
+    if (message.channel.id == '575457906120720394') {
+        let currentMessage = profanityCipher(message);
+        if (checkProfanity(currentMessage) == true) {
+            message.delete();
+        }
+    }
+
     if (message.member.roles.has('575056660997865475')) {
         // Admin and Mod commands go here
         if (message.content.startsWith("!purge")) {
@@ -51,11 +63,43 @@ client.on('message', message => {
             // Deleting the messages
             message.channel.bulkDelete(splitCommand[1]).catch(error => message.channel.send('Error: ${error}'));
         }
-        
+
         if (message.member.roles.has('575053814047178782')) {
             // Only Admin commands go here
         }
     }
 });
+
+// For if anyone ever looks through this source code. No need to see a bunch of swearing lol.
+function profanityCipher(originalMessage) {
+
+    let splitCode = SWEAR_CIPHER.split('');
+    let splitCodeAlt = SWEAR_CHECK.split('');
+    let newMessage = "";
+
+    for (var i = 0; i < originalMessage.length; i++) {
+        let currentCharacter = originalMessage.charAt(i);
+
+        if (splitCodeAlt.indexOf(currentCharacter).toLowerCase !== -1) {
+            let currentCharacter = SWEAR_CIPHER[splitCodeAlt.indexOf(currentCharacter).toLowerCase];
+        }
+
+        newMessage = newMessage + currentCharacter;
+    }
+
+    return newMessage;
+}
+
+function checkProfanity(code) {
+
+    let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "49lx", "3n3x", "85l"];
+
+    for (var i = 0; i < swears.length; i++ ) {
+        let swear = swears.[i];
+        if (code.content.includes(swear)) {
+            return true;
+        }
+    }
+}
 
 client.login(process.env.BOT_TOKEN);

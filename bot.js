@@ -48,7 +48,7 @@ client.on('message', message => {
     }
 
     // Clean chat filter
-    if (message.channel.id == '575457906120720394') {
+    /*if (message.channel.id == '575457906120720394') {
         message.channel.send("Command recieved");
         let currentMessage = profanityCipher(message);
         if (checkProfanity(currentMessage) == true) {
@@ -56,7 +56,7 @@ client.on('message', message => {
         } else {
             message.channel.send("failed");
         }
-    }
+    }*/
 
     if (message.member.roles.has('575056660997865475')) {
         // Admin and Mod commands go here

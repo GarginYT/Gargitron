@@ -49,6 +49,7 @@ client.on('message', message => {
 
     // Clean chat filter
     if (message.channel.id == '575457906120720394') {
+        message.channel.send("Command recieved");
         let currentMessage = profanityCipher(message);
         if (checkProfanity(currentMessage) == true) {
             message.delete();

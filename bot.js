@@ -78,7 +78,8 @@ function profanityCipher(originalMessage) {
 
     let splitCode = "123456789zxcvbnmasdfghjklq";
     let splitCodeArray = splitCode.split('');
-
+    console.log ("The Code Array is " + splitCodeArray);
+    
     let splitCodeAlt = "abcdefghijklmnopqrstuvwxyz";
     let splitCodeAltArray = splitCodeAlt.split('');
 

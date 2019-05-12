@@ -53,7 +53,7 @@ client.on('message', message => {
         if (checkProfanity(currentMessage) == true) {
             message.delete();
         } else {
-            message.channel.send ("failed");
+            message.channel.send("failed");
         }
     }
 
@@ -76,16 +76,18 @@ client.on('message', message => {
 function profanityCipher(originalMessage) {
 
     let splitCode = "123456789zxcvbnmasdfghjklq";
-    splitCode = splitCode.split('');
+    let splitCodeArray = splitCode.split('');
+
     let splitCodeAlt = "abcdefghijklmnopqrstuvwxyz";
-    splitCodeAlt = splitCodeAlt.split('');
+    let splitCodeAltArray = splitCodeAlt.split('');
+
     let newMessage = "";
 
     for (var i = 0; i < originalMessage.length; i++) {
         let currentCharacter = originalMessage.charAt(i);
 
-        if (splitCodeAlt.indexOf(currentCharacter).toLowerCase !== -1) {
-            let currentCharacter = splitCode[splitCodeAlt.indexOf(currentCharacter).toLowerCase];
+        if (splitCodeAltArray.indexOf(currentCharacter).toLowerCase !== -1) {
+            let currentCharacter = splitCodeArray[splitCodeAltArray.indexOf(currentCharacter).toLowerCase];
         }
 
         newMessage = newMessage + currentCharacter;
@@ -98,7 +100,7 @@ function checkProfanity(code) {
 
     let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "49lx", "3n3x", "85l"];
 
-    for (var i = 0; i < swears.length; i++ ) {
+    for (var i = 0; i < swears.length; i++) {
         let swear = swears.[i];
         if (code.content.includes(swear)) {
             return true;

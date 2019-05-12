@@ -101,7 +101,7 @@ function checkProfanity(code) {
     let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "49lx", "3n3x", "85l"];
 
     for (var i = 0; i < swears.length; i++) {
-        let swear = swears.[i];
+        let swear = swears[i];
         if (code.content.includes(swear)) {
             return true;
         }

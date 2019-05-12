@@ -88,7 +88,7 @@ function profanityCipher(originalMessage) {
         let currentCharacter = originalMessage.charAt(i);
 
         if (splitCodeAltArray.indexOf(currentCharacter).toLowerCase !== -1) {
-            let translatedCharacter = splitCodeArray[splitCodeAltArray.indexOf(currentCharacter).toLowerCase];
+            let translatedCharacter = splitCodeArray[splitCodeAltArray.indexOf(currentCharacter.toLowerCase())];
             newMessage = newMessage + translatedCharacter;
             continue;
         }

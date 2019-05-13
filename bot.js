@@ -100,7 +100,7 @@ function profanityCipher(originalMessage) {
 
 function checkProfanity(code) {
 
-    let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "49lx", "3n3x"];
+    let swears = ["6g3x", "d89f", "29f38", "mgddl", "3gbf", "1dd", "493x", "3n3x"];
 
     for (var i = 0; i < swears.length; i++) {
         let swear = swears[i];

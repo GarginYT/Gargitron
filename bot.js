@@ -49,7 +49,7 @@ client.on('message', message => {
         // If the message is !remove
         if (message.content == "!remove") {
             // Removing the roles
-            message.member.removeRoles(['575102690393063424', '575102622776950804', '575067316753137674']);
+            message.member.removeRoles(['575102690393063424', '575102622776950804', '575067316753137674', '774343304476098580']);
             message.channel.send("Your roles have been successfully removed!");
         }
         // Deleting the message in 3 seconds

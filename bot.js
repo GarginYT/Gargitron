@@ -37,6 +37,13 @@ client.on('message', message => {
             message.member.addRole(currentRole);
             message.channel.send("Success! You have been assigned the Video Announcements role.");
         }
+        // If the message is !stream
+        if (message.content == "!stream") {
+            // Adding the Stream Announcements role
+            let currentRole = message.guild.roles.get('774343304476098580');
+            message.member.addRole(currentRole);
+            message.channel.send("Success! You have been assigned the Stream Announcements role.")
+        }
         // If the message is !remove
         if (message.content == "!remove") {
             // Removing the roles

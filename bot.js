@@ -18,7 +18,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', message => {
     
-    if (message.content.includes("cheese mixed with strawberry seeds stuffed inside a licorice crust topped with black olives and democratic debates"))
+    if (message.content.includes("cheese"))
     {
         message.channel.send("test");
         let video = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/575051981110902805/774856890760167435/omwtobanyou.mp4");

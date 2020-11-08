@@ -69,8 +69,6 @@ client.on('message', message => {
     }
 
     if (message.member.roles.has('575056660997865475')) {
-        
-        message.channel.send("test");
         // Admin and Mod commands go here
         if (message.content.startsWith("!purge")) {
             // Spliting the command and finding the number after !purge
